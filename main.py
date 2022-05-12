@@ -1,8 +1,6 @@
 import PySimpleGUI as sg
 
-sg.theme('Topanga')      # Add some color to the window
-
-# Very basic window.  Return values using auto numbered keys
+sg.theme('Topanga')
 
 layout = [
     [sg.Text('Anmeldung am Dietrich-Bonhoeffer-Gymnasium Eppelheim:')],
@@ -45,4 +43,4 @@ layout = [
 window = sg.Window('Simple data entry window', layout)
 event, values = window.read()
 window.close()
-print(event, values[0], values[1], values[2])
+print(event, values)
