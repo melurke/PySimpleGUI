@@ -29,7 +29,7 @@ layout = [
     [sg.Text('Telefonnummern (Festnetz, Mobiltelefon)', size=(30, 1)), sg.InputText()],#
     [sg.Text('E-Mail', size=(30, 1)), sg.InputText()],
     [sg.Text('')],
-    [sg.Text('Angaben zur zuletzt besuchten Schule:')]
+    [sg.Text('Angaben zur zuletzt besuchten Schule:')],
     [sg.Text('Schulart', size=(30, 1)), sg.InputText()],
     [sg.Text('Schulname', size=(30, 1)), sg.InputText()],
     [sg.Text('Ort', size=(30, 1)), sg.InputText()],
