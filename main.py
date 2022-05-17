@@ -5,12 +5,12 @@ sg.theme('Material1')
 gender_choices = ('männlich', 'weiblich', 'divers')
 day_choices = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
 month_choices = ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')
-year_choices = (2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004)
+year_choices = (2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004)
 
 layout = [
     [sg.Text('Anmeldung am Dietrich-Bonhoeffer-Gymnasium Eppelheim:', font='Helvetica 24')],
     [sg.Text('')],
-    [sg.Text('Schüler/in:')],
+    [sg.Text('Schüler/in:', font='Helvetica 18')],
     [sg.Text('Name', size=(30, 1)), sg.InputText()],
     [sg.Text('Vorname', size=(30, 1)), sg.InputText()],
     [sg.Text('Geschlecht', size=(30, 1)), sg.Combo(gender_choices, default_value='')],
@@ -24,7 +24,7 @@ layout = [
     [sg.Text('Telefonnummern (Festnetz, Mobiltelefon)', size=(30, 1)), sg.InputText()],
     [sg.Text('E-Mail', size=(30, 1)), sg.InputText()],
     [sg.Text('')],
-    [sg.Text('Erziehungsberechtigte/r:')],
+    [sg.Text('Erziehungsberechtigte/r:', font='Helvetica 18')],
     [sg.Text('Name', size=(30, 1)), sg.InputText()],
     [sg.Text('Vorname', size=(30, 1)), sg.InputText()],
     [sg.Text('Straße und Hausnummer', size=(30, 1)), sg.InputText()],
@@ -34,17 +34,18 @@ layout = [
     [sg.Text('Telefonnummern (Festnetz, Mobiltelefon)', size=(30, 1)), sg.InputText()],
     [sg.Text('E-Mail', size=(30, 1)), sg.InputText()],
     [sg.Text('')],
-    [sg.Text('Angaben zur zuletzt besuchten Schule:')],
+    [sg.Text('Angaben zur zuletzt besuchten Schule:', font='Helvetica 18')],
     [sg.Text('Schulart', size=(30, 1)), sg.InputText()],
     [sg.Text('Schulname', size=(30, 1)), sg.InputText()],
     [sg.Text('Ort', size=(30, 1)), sg.InputText()],
     [sg.Text('')],
-    [sg.Text('Fächer und Noten:')],
+    [sg.Text('Fächer und Noten:', font='Helvetica 18')],
     [sg.Text('Deutsch', size=(30, 1)), sg.InputText()],
     [sg.Text('Englisch', size=(30, 1)), sg.InputText()],
     [sg.Text('Mathematik', size=(30, 1)), sg.InputText()],
-    [sg.Text('Maßgebliches Fach', size=(30, 1)), sg.InputText()],
-    [sg.Submit('Einreichen'), sg.Cancel('Abbrechen')]
+    [sg.Text('')],
+    [sg.Submit('Einreichen'), sg.Cancel('Abbrechen')],
+    [sg.Text('')],
 ]
 
 window = sg.Window('Anmeldung am Dietrich-Bonhoeffer-Gymnasium Eppelheim', layout, web_port=3141, web_start_browser=True)
