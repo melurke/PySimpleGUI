@@ -1,4 +1,8 @@
 import PySimpleGUIWeb as sg
+import pyautogui
+
+input_file = open('input.txt','w')
+input = ""
 
 sg.theme('Material1')
 
@@ -51,3 +55,11 @@ layout = [
 window = sg.Window('Anmeldung am Dietrich-Bonhoeffer-Gymnasium Eppelheim', layout, web_port=3141, web_start_browser=True)
 event, values = window.read()
 window.close()
+pyautogui.keyDown('ctrl')
+pyautogui.press('w')
+pyautogui.keyUp('ctrl')
+print(event, values)
+for value in range(0, len(values)):
+    input += str(values.get(value))+"\n"
+input_file.writelines(input)
+input_file.close()
