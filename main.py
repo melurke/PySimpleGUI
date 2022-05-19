@@ -1,15 +1,15 @@
 import PySimpleGUIWeb as sg
 import pyautogui
 
-input_file = open('input.txt','w')
+input_file = open('input.txt', 'w')
 input = ""
 
 sg.theme('Material1')
 
-gender_choices = ('männlich', 'weiblich', 'divers')
-day_choices = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
-month_choices = ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')
-year_choices = (2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004)
+gender_choices = ('Bitte auswählen', 'männlich', 'weiblich', 'divers')
+day_choices = ('Bitte auswählen', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
+month_choices = ('Bitte auswählen', 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')
+year_choices = ('Bitte auswählen', 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004)
 
 layout = [
     [sg.Text('Anmeldung am Dietrich-Bonhoeffer-Gymnasium Eppelheim:', font='Helvetica 24')],
@@ -61,5 +61,22 @@ pyautogui.keyUp('ctrl')
 print(event, values)
 for value in range(0, len(values)):
     input += str(values.get(value))+"\n"
-input_file.writelines(input)
+new_input = ""
+for letter in input:
+    if letter == "ä":
+        new_input += "ae"
+    elif letter == "Ä":
+        new_input += "Ae"
+    elif letter == "ö":
+        new_input += "oe"
+    elif letter == "Ö":
+        new_input += "Oe"
+    elif letter == "ü":
+        new_input += "ue"
+    elif letter == "Ü":
+        new_input += "Ue"
+    else:
+        new_input += letter
+if event == "Einreichen":
+    input_file.writelines(new_input)
 input_file.close()
